@@ -8,7 +8,7 @@ function addGUI(max,set){
           var bar = new android.widget.ProgressBar(ctx, null, android.R.attr.progressBarStyleHorizontal);//プログレスバーを作る宣言
     bar.setMax(max);//バーの最大値
     bar.setProgress(set);//バーの設定値
-        gui=new android.widget.PopupWindow(bar,500,200);//ウィンドウの大きさを設定
+        gui=new android.widget.PopupWindow(bar,400,100);//ウィンドウの大きさを設定
         gui.showAtLocation(ctx.getWindow().getDecorView(),android.view.Gravity.CENTER|android.view.Gravity.CENTER,0,200);//ウィンドウを中央の少し下に表示
         }catch(e){
           clientMessage(e);
