@@ -1,0 +1,65 @@
+var pr=[1500,1501,1502,1503,1504,1505,1506,1507,1508,1509,1510,1511,1512,1513,1514,1515,1516,1517,1518,1519,1520,1521,1522];
+var na=["スピード↑","スピード↓","採掘速度↑","採掘速度↓","攻撃","回復","ダメージ","跳躍","吐き気","再生","耐性","火炎耐性","水中呼吸","透明化","盲目","暗視","空腹","弱体化","毒","ウィザー","体力増強","衝撃吸収","満腹"];
+var dr=[1600];
+var rem=1499;
+ModPE.setItem(rem,"book_writable",0,"§eNothing Book",1);
+for(s=0;s<pr.length;s++){
+ModPE.setItem(pr[s],"stick",0,na[s],1);}
+ModPE.setFoodItem(dr[0],"potion_bottle_drinkable",4,1,"再生薬",64);
+Item.setProperties(dr[0], {
+	"use_animation": "drink",
+	"use_duration": 32,
+	"food": {
+		"nutrition": 0,
+		//ここ推測
+		"using_converts_to": "item.bottle",
+		"is_meat": false,
+		"effects": [
+			{
+				"name":["instant_health","resistance"],//エフェクト
+				"chance": 1.0,//エフェクトのつく確率
+				"duration": 100,//時間
+				"amplifier": 4//多分エフェクトの強さ
+			}
+		]
+	}
+});
+function newLevel(){
+for(s=0;s<pr.length;s++){
+	Item.setHandEquipped(pr[s],true); 
+	Player.addItemCreativeInv(pr[s],1);
+	Item.setCategory(pr[s],3);
+}
+	Player.addItemCreativeInv(dr[0],1);
+	Item.setCategory(dr[0],3);
+	Item.setHandEquipped(rem,true); 
+	Player.addItemCreativeInv(rem,1);
+	Item.setCategory(rem,3);
+}
+
+function attackHook(a,v){
+var CItem=Player.getCarriedItem();
+for(s=0;s<pr.length;s++){
+if(CItem==pr[s]){
+	preventDefault();
+     if(Entity.isSneaking(getPlayerEnt())!==true){
+	Entity.addEffect(v,s+1, 20000, 4);
+	clientMessage("§a"+na[s]+"を与えた");
+     }else{
+      Entity.removeEffect(v,s+1);
+      clientMessage("§a"+na[s]+"を消した");
+   }}
+}
+if(CItem==rem){
+preventDefault();
+Entity.removeAllEffects(v);
+clientMessage("§aすべての効果を消した");}
+}
+function modTick(){
+var CItem=Player.getCarriedItem();
+	for(d=0;d<dr.length;d++){
+		if(CItem==dr[d]){
+			Player.setHunger(19);
+		}
+	}
+}
