@@ -16,10 +16,11 @@ Item.setProperties(dr[0], {
 		"is_meat": false,
 		"effects": [
 			{
-				"name":[{"jump_boost","speed","resistance"}],//エフェクト
+//エフェクト
 				"chance": 1.0,//エフェクトのつく確率
 				"duration": 100,//時間
-				"amplifier": 4//多分エフェクトの強さ
+				"amplifier": 4,//多分エフェクトの強さ
+				"name":["jump_boost","speed","resistance"]
 			}
 		]
 	}
