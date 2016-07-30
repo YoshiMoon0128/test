@@ -15,7 +15,7 @@ Item.setProperties(dr[0], {
 		"is_meat": false,
 		"effects": [
 			{
-		 		"name":"health",
+		 		"name":"Instant_Health",
 				"chance": 1.0,
 				"duration": 1,
 				"amplifier":2
