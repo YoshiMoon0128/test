@@ -8,7 +8,7 @@ ModPE.setItem(pr[s],"stick",0,na[s],1);}
 ModPE.setFoodItem(dr[0],"potion_bottle_drinkable",4,1,"再生薬",64);
 Item.setProperties(dr[0], {
 	"use_animation": "drink",
-	"use_duration": 32,
+	"use_duration": 80,
 	"food": {
 		"nutrition": 0,
 		"using_converts_to": "item.bottle",
@@ -17,8 +17,8 @@ Item.setProperties(dr[0], {
 			{
 		 		"name":"regeneration",
 				"chance": 1.0,
-				"duration": 100,
-				"amplifier":4
+				"duration": 60,
+				"amplifier":2
 			}
 		]
 	}
