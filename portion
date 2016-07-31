@@ -8,17 +8,45 @@ ModPE.setItem(pr[s],"stick",0,na[s],1);}
 ModPE.setFoodItem(dr[0],"potion_bottle_drinkable",4,1,"再生薬",64);
 Item.setProperties(dr[0], {
 	"use_animation": "drink",
-	"use_duration": 2,
+	"use_duration": 32,
 	"food": {
 		"nutrition": 0,
 		"using_converts_to": "item.bottle",
 		"is_meat": false,
 		"effects": [
 			{
-		 		"name":"heal",
+		 		"name":"regeneration",
 				"chance": 1.0,
-				"duration": 100,
-				"amplifier":2
+				"duration": 300,
+				"amplifier":3
+			}
+		]
+	}
+});
+ModPE.setFoodItem(1700,"potion_bottle_drinkable",4,1,"幸腹薬",64);
+Item.setProperties(1700, {
+	"name": "幸腹薬", 
+	"id": 1700,
+	"icon": "potion_bottle_drinkable",
+	"category": "Miscellaneous",
+	"use_animation": "drink",
+	"use_duration": 400,
+	"hand_equipped": true,
+	"stack_by_data": true,
+	"foil": true,
+	"hover_text_color": "light_purple",
+	"food": {
+		"nutrition": 20,
+		"saturation_modifier": "supernatural",
+		//ここ推測
+		"using_converts_to": "item.bottle",
+		"is_meat": false,
+		"effects": [
+			{
+				"name":"slowness",//エフェクト
+				"chance": 0.55,//エフェクトのつく確率
+				"duration": 30,//時間
+				"amplifier": 2//多分エフェクトの強さ
 			}
 		]
 	}
