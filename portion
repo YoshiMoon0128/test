@@ -5,7 +5,7 @@ var rem=1499;
 ModPE.setItem(rem,"book_writable",0,"§eNothing Book",1);
 for(s=0;s<pr.length;s++){
 ModPE.setItem(pr[s],"stick",0,na[s],1);}
-ModPE.setFoodItem(dr[0],"potion_bottle_drinkable",12,1,"再生薬",64);
+ModPE.setFoodItem(dr[0],"potion_bottle_drinkable",2,1,"再生薬",64);
 Item.setProperties(dr[0], {
 	"use_animation": "drink",
 	"use_duration": 32,
