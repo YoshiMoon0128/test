@@ -58,12 +58,15 @@ for(s=0;s<pr.length;s++){
 	Item.setHandEquipped(pr[s],true); 
 	Player.addItemCreativeInv(pr[s],1);
 	Item.setCategory(pr[s],3);
+Item.addShapedRecipe(pr[s],1, 0, [" d","  "],["d",3,0]);
 }
 	Player.addItemCreativeInv(dr[0],1);
 	Item.setCategory(dr[0],3);
+Item.addShapedRecipe(dr[0],1, 0, [" d","  "],["d",3,0]);
 	Item.setHandEquipped(rem,true); 
 	Player.addItemCreativeInv(rem,1);
 	Item.setCategory(rem,3);
+Item.addShapedRecipe(rem,1, 0, [" d","  "],["d",3,0]);
 }
 
 function attackHook(a,v){
