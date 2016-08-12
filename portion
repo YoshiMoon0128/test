@@ -5,7 +5,7 @@ var rem=1499;
 ModPE.setItem(rem,"book_writable",0,"§eNothing Book",1);
 for(s=0;s<pr.length;s++){
 ModPE.setItem(pr[s],"stick",0,na[s],1);}
-ModPE.setFoodItem(dr[0],"potion_bottle_drinkable",0,1,"再生薬",64);
+ModPE.setFoodItem(dr[0],"potion_bottle_regeneration",0,1,"再生薬",64);
 Item.setProperties(dr[0], {
 	"use_animation": "drink",
 	"use_duration": 32,
@@ -53,7 +53,7 @@ Item.setProperties(1700, {
 		]
 	}
 });
-function newLevel(){
+
 for(s=0;s<pr.length;s++){
 	Item.setHandEquipped(pr[s],true); 
 	Player.addItemCreativeInv(pr[s],1);
@@ -67,7 +67,7 @@ Item.addShapedRecipe(dr[0],1, 0, [" d","  "],["d",3,0]);
 	Player.addItemCreativeInv(rem,1);
 	Item.setCategory(rem,3);
 Item.addShapedRecipe(rem,1, 0, [" d","  "],["d",3,0]);
-}
+
 
 function attackHook(a,v){
 var CItem=Player.getCarriedItem();
