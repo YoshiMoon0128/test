@@ -29,4 +29,3 @@ clientMessage(er);
 }
 }}));
 }
-//ここまで
