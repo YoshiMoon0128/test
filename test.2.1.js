@@ -10,7 +10,7 @@ function addGUI(max,set){
     bar.setMax(max);//バーの最大値
     bar.setProgress(set);//バーの設定値
         gui=new android.widget.PopupWindow(bar,500,200);//ウィンドウの大きさを設定
-        gui.showAtLocation(ctx.getWindow().getDecorView(),android.view.Gravity.CENTER|android.view.Gravity.CENTER,0,150);//ウィンドウを中央の少し下に表示
+        gui.showAtLocation(ctx.getWindow().getDecorView(),android.view.Gravity.CENTER|android.view.Gravity.CENTER,0,50);//ウィンドウを中央の少し下に表示
         }catch(e){
           clientMessage(e);
         }
